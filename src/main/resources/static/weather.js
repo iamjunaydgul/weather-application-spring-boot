@@ -1,0 +1,4 @@
+$(function(){
+    $("#weatherTable").DataTable();
+});
+

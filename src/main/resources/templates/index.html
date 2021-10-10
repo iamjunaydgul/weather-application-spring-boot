@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather App: Spring boot & Apache Camel Weather Component</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<main role="main" class="container">
+
+    <div class="starter-template" style="width: 70%; margin-left: 150px; margin-top: 100px;">
+        <table id="weatherTable">
+            <thead>
+            <tr>
+                <th >Country</th>
+                <th >City</th>
+                <th >Weather</th>
+                <th >Minimum Temperature</th>
+                <th >Maximum Temperature</th>
+                <th >Last Updated On</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="list : ${weatherList}">
+                <td th:text="${list.countryName}"></td>
+                <td th:text="${list.cityName}"></td>
+                <td th:text="${list.cityWeatherDesc}"></td>
+                <td th:text="${list.cityMinTemperature}"></td>
+                <td th:text="${list.cityMaxTemperature}"></td>
+                <td th:text="${list.lastUpdatedAt}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script th:src="@{/weather.js}"></script>
+</body>
+</html>
